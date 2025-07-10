@@ -14,3 +14,7 @@ app.add_middleware(CORSMiddleware,
 
 app.include_router(upload.router,prefix="/upload",tags=["upload"])
 app.include_router(qa.router,prefix="/qa",tags=["Q&A"])
+
+@app.get("/")
+def root():
+    return {"msg":"main page!"}
